@@ -17,8 +17,10 @@ function handleRequest(request) {
 }
 
 function addImages(objs) {
+  const resultDiv = document.querySelector("#result");
+  resultDiv.innerHTML = "";
   for (let imgObj of objs) {
-    document.body.innerHTML += `
+    resultDiv.innerHTML += `
       <br>
       <br>
       <img src=${imgObj.download_url} height="100px"></img>
@@ -38,3 +40,5 @@ document.querySelector("#btn23").addEventListener('click', () => {
     alert("Number is out of range")
   }
 })
+
+// Программа работает не совсем верно. Сейчас, т.к. вы загружаете картинки непосредственно в body, при каждой загрузке DOM перезагружается и у кнопки слетает обработчик клика. Т.е. загрузить картинки можно только один раз, потом кнопка перестает работать. Картинки нужно загружать в специально созданный для этого контейнер. Ошибку исправила.

@@ -28,3 +28,5 @@ document.querySelector("#btn24").addEventListener("click", () => {
     document.querySelector("#p24").innerHTML = "One of the value is not in the range from 100 to 300";
   }
 })
+
+// Здесь та же самая ошибка, что и в предыдущем задании: из-за того, что вы записываете в body, обработчик клика срабатывает только один раз

@@ -25,8 +25,7 @@ console.log(xmlParsed);
 
 for (let student of xmlParsed.querySelectorAll("student")) {
   jsObj.list.push({
-    first: student.querySelector("first").innerHTML,
-    second: student.querySelector("second").innerHTML,
+    name: student.querySelector("first").innerHTML + ' ' + student.querySelector("second").innerHTML,
     age: student.querySelector("age").innerHTML,
     prof: student.querySelector("prof").innerHTML,
     lang: student.querySelector("name").getAttribute("lang")
@@ -35,3 +34,5 @@ for (let student of xmlParsed.querySelectorAll("student")) {
 }
 
 console.log(jsObj);
+
+// Есть небольшой недочет: по заданию в получившемся объекте не должно быть свойств first и second, вместо этого должно быть свойство name, которое содержит и имя, и фамилию. Выше исправила на правильный вариант
